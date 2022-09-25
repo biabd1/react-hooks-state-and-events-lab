@@ -14,10 +14,10 @@ function App() {
  
 
   return (
-    <div onClick={handleClick} className={appClass ? "App light":"App dark"}>
+    <div className={appClass ? "App light":"App dark"}>
       <header>
         <h2>Shopster</h2>
-        <button>{appClass ? 'Light Mode':'Dark Mode'}</button>
+        <button  onClick={handleClick}>{appClass ? 'Light Mode':'Dark Mode'}</button>
       </header>
       <ShoppingList items={itemData} />
     </div>

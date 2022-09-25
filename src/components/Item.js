@@ -1,11 +1,12 @@
 import React,{useState}  from "react";
+import itemData from "../data/items";
 
 function Item({ name, category }) {
 
   const [inCart, setCart] = useState(false)
 
-  const addItemToCart = ()=>{
-    setCart(true);
+  const addItem = ()=>{
+    setCart((inCart)=>!inCart)
     
   }
 
@@ -13,7 +14,7 @@ function Item({ name, category }) {
     <li className={inCart ? 'in-cart': ''}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button onClick={addItemToCart} className="add">Add to Cart</button>
+      <button onClick={addItem}>{inCart ? "Remove From Cart":"Add To Cart"}</button>
     </li>
   );
 }
